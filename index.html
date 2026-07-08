@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>DDisrupt Software — Hyperautomation, Integration & Supply Chain</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%2215%2030%2088%2073%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%2222%22%20y1%3D%2234%22%20x2%3D%2298%22%20y2%3D%2294%22%20gradientUnits%3D%22userSpaceOnUse%22%3E%3Cstop%20stop-color%3D%22%233B82F6%22/%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%2306B6D4%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg%20transform%3D%22translate%280%2C5%29%22%3E%3Cpath%20d%3D%22M40%2088%20a21%2021%200%200%201%20-2%20-41%20a28%2028%200%200%201%2054%20-4%20a18%2018%200%200%201%204%2045%20Z%22%20fill%3D%22url%28%23g%29%22/%3E%3Cg%20stroke%3D%22%23fff%22%20stroke-width%3D%223.4%22%20opacity%3D%22.9%22%3E%3Cline%20x1%3D%2263%22%20y1%3D%2263%22%20x2%3D%2246%22%20y2%3D%2252%22/%3E%3Cline%20x1%3D%2263%22%20y1%3D%2263%22%20x2%3D%2282%22%20y2%3D%2253%22/%3E%3Cline%20x1%3D%2263%22%20y1%3D%2263%22%20x2%3D%2254%22%20y2%3D%2280%22/%3E%3C/g%3E%3Cg%20fill%3D%22%23fff%22%3E%3Ccircle%20cx%3D%2246%22%20cy%3D%2252%22%20r%3D%225%22/%3E%3Ccircle%20cx%3D%2282%22%20cy%3D%2253%22%20r%3D%225%22/%3E%3Ccircle%20cx%3D%2254%22%20cy%3D%2280%22%20r%3D%225%22/%3E%3Ccircle%20cx%3D%2263%22%20cy%3D%2263%22%20r%3D%228%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E">
+<meta name="description" content="DDisrupt Software builds the automation and integration layer that connects your cloud, APIs, and supply chain. Hyperautomation, Apigee, Google Cloud, Appian, and ServiceNow delivery." />
+<meta name="author" content="DDisrupt Software Pvt Ltd" />
+<meta name="keywords" content="hyperautomation, API management, Apigee, Google Cloud, GCP, Appian, ServiceNow, RPA, supply chain, integration, Gen AI, data engineering" />
+<meta name="robots" content="index, follow" />
+<meta name="theme-color" content="#ffffff" />
+<!-- Open Graph / social sharing -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="DDisrupt Software" />
+<meta property="og:title" content="DDisrupt Software — Hyperautomation, Integration & Supply Chain" />
+<meta property="og:description" content="The automation and integration layer for the connected enterprise. Hyperautomation, Apigee, Google Cloud, Appian, ServiceNow, and supply chain — delivered as one." />
+<meta property="og:locale" content="en_US" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="DDisrupt Software — Hyperautomation, Integration & Supply Chain" />
+<meta name="twitter:description" content="The automation and integration layer for the connected enterprise." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FFFFFF;
+    --bg-1:#F4F7FC;
+    --panel:#FFFFFF;
+    --panel-2:#F5F8FD;
+    --line:#E3E9F2;
+    --line-soft:#EDF1F8;
+    --text:#0D1526;
+    --text-dim:#4A566C;
+    --muted:#8A93A6;
+    --teal:#2F6BFF;
+    --teal-deep:#06B6D4;
+    --amber:#F59E2E;
+    --amber-deep:#E07C0E;
+    --violet:#06B6D4;
+    --maxw:1140px;
+    --ease:cubic-bezier(.2,.7,.2,1);
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:"IBM Plex Sans",system-ui,sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--teal);color:#fff}
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+  .mono{font-family:"IBM Plex Mono",monospace}
+  .eyebrow{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:12px;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--teal);
+    display:inline-flex;align-items:center;gap:10px;
+  }
+  .eyebrow::before{content:"";width:22px;height:1px;background:var(--teal);opacity:.7}
+
+  h1,h2,h3{font-family:"Space Grotesk",sans-serif;font-weight:600;line-height:1.05;letter-spacing:-.02em}
+
+  /* ---------- reveal ---------- */
+  body.js .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+  body.js .reveal.in{opacity:1;transform:none}
+  body.js .reveal.d1{transition-delay:.08s}
+  body.js .reveal.d2{transition-delay:.16s}
+  body.js .reveal.d3{transition-delay:.24s}
+
+  /* ---------- nav ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(255,255,255,.78);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid transparent;
+    transition:border-color .3s,background .3s;
+  }
+  header.scrolled{border-bottom-color:var(--line);background:rgba(255,255,255,.92);box-shadow:0 1px 20px -12px rgba(13,21,38,.3)}
+  nav{display:flex;align-items:center;justify-content:space-between;height:70px}
+  .brand{display:flex;align-items:center;gap:11px;font-family:"Space Grotesk";font-weight:700;font-size:19px;letter-spacing:-.01em}
+  .brand-logo{height:38px;width:auto;display:block}
+  .foot-brand .brand-logo{height:46px}
+  .nav-links{display:flex;gap:30px;align-items:center}
+  .nav-links a{font-size:14.5px;color:var(--text-dim);transition:color .2s}
+  .nav-links a:hover{color:var(--text)}
+  .btn{
+    font-family:"IBM Plex Sans";font-weight:600;font-size:14.5px;
+    padding:11px 20px;border-radius:9px;cursor:pointer;border:1px solid transparent;
+    transition:transform .18s var(--ease),box-shadow .25s,background .2s,border-color .2s;
+    display:inline-flex;align-items:center;gap:9px;white-space:nowrap;
+  }
+  .btn-primary{background:linear-gradient(135deg,#2F6BFF,#06B6D4);color:#fff;box-shadow:0 8px 22px -8px rgba(47,107,255,.5)}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 30px -8px rgba(47,107,255,.6)}
+  .btn-ghost{border-color:var(--line);color:var(--text);background:#fff}
+  .btn-ghost:hover{border-color:var(--teal);color:var(--teal)}
+  .menu-toggle{display:none;background:none;border:1px solid var(--line);border-radius:8px;width:42px;height:38px;cursor:pointer;color:var(--text)}
+  .menu-toggle span{display:block;width:16px;height:1.6px;background:currentColor;margin:3px auto;transition:.25s}
+
+  /* ---------- hero ---------- */
+  .hero{position:relative;padding:76px 0 92px;overflow:hidden}
+  .hero::before{
+    content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+    background:
+      radial-gradient(620px 420px at 80% 24%,rgba(47,107,255,.10),transparent 70%),
+      radial-gradient(540px 440px at 8% 82%,rgba(6,182,212,.10),transparent 70%);
+  }
+  .hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.02fr .98fr;gap:52px;align-items:center}
+  .hero h1{font-size:clamp(38px,5.2vw,62px);margin:20px 0 20px}
+  .hero h1 .flowword{color:var(--teal);position:relative;white-space:nowrap}
+  .hero p.lede{font-size:18px;color:var(--text-dim);max-width:44ch;margin-bottom:30px}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:34px}
+  .trust{display:flex;gap:24px;flex-wrap:wrap;align-items:center;font-size:13px;color:var(--muted);font-family:"IBM Plex Mono"}
+  .trust b{color:var(--text-dim);font-weight:500}
+
+  /* ---------- flow graphic ---------- */
+  .flowbox{position:relative}
+  .flow-svg{width:100%;height:auto;display:block;overflow:visible}
+  .flow-line{fill:none;stroke:var(--line);stroke-width:1.4}
+  .flow-line.active{stroke:url(#tealgrad);stroke-width:1.6;stroke-dasharray:5 9;animation:crawl 2.4s linear infinite}
+  @keyframes crawl{to{stroke-dashoffset:-56}}
+  .node-dot{fill:var(--panel);stroke:var(--line);stroke-width:1.4}
+  .node-dot.hub{fill:#0C1A22;stroke:var(--teal);stroke-width:1.8}
+  .node-ring{fill:none;stroke:var(--teal);stroke-width:1.4;opacity:.5;transform-origin:center;transform-box:fill-box;animation:pulse 3.4s ease-in-out infinite}
+  @keyframes pulse{0%,100%{opacity:.5;transform:scale(1)}50%{opacity:.05;transform:scale(1.7)}}
+  .node-label{font-family:"IBM Plex Mono";font-size:12.5px;fill:var(--text-dim)}
+  .node-label.hub{fill:var(--teal);font-size:13px;font-weight:500}
+  .node-sub{font-family:"IBM Plex Mono";font-size:10px;fill:var(--muted)}
+  .packet{fill:var(--amber);filter:drop-shadow(0 0 5px rgba(255,182,97,.9))}
+  .p1{offset-path:path("M310,240 Q200,150 120,110");animation:travel 3.2s linear infinite}
+  .p2{offset-path:path("M310,240 Q410,150 500,110");animation:travel 3.2s .6s linear infinite}
+  .p3{offset-path:path("M310,240 Q410,320 500,370");animation:travel 3.2s 1.2s linear infinite}
+  .p4{offset-path:path("M310,240 Q200,320 120,370");animation:travel 3.2s 1.8s linear infinite}
+  @keyframes travel{from{offset-distance:0%;opacity:0}10%{opacity:1}90%{opacity:1}to{offset-distance:100%;opacity:0}}
+
+  /* ---------- generic section ---------- */
+  section{position:relative}
+  .band{padding:96px 0;border-top:1px solid var(--line-soft)}
+  .band.alt{background:var(--bg-1)}
+  .sec-head{max-width:640px;margin-bottom:52px}
+  .sec-head h2{font-size:clamp(28px,3.6vw,42px);margin:16px 0 14px}
+  .sec-head p{color:var(--text-dim);font-size:17px}
+
+  /* ---------- stack strip ---------- */
+  .stack-strip{border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft);background:var(--panel-2)}
+  .stack-strip .wrap{display:flex;align-items:center;gap:34px;flex-wrap:wrap;padding-top:22px;padding-bottom:22px}
+  .stack-strip .lbl{font-family:"IBM Plex Mono";font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+  .stack-strip .chips{display:flex;gap:12px;flex-wrap:wrap}
+  .chip{font-family:"IBM Plex Mono";font-size:13px;color:var(--text-dim);border:1px solid var(--line);border-radius:20px;padding:6px 15px;transition:.2s}
+  .chip:hover{border-color:var(--teal);color:var(--teal)}
+
+  /* ---------- capabilities ---------- */
+  .cap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .cap{
+    background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:28px;
+    position:relative;overflow:hidden;transition:transform .3s var(--ease),border-color .3s,box-shadow .3s;
+    box-shadow:0 1px 2px rgba(13,21,38,.04),0 12px 28px -20px rgba(13,21,38,.22);
+  }
+  .cap::after{content:"";position:absolute;left:0;right:0;top:0;height:2px;background:linear-gradient(90deg,var(--teal),transparent);transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease)}
+  .cap:hover{transform:translateY(-4px);border-color:rgba(47,107,255,.3);box-shadow:0 1px 2px rgba(13,21,38,.05),0 22px 40px -24px rgba(13,21,38,.35)}
+  .cap:hover::after{transform:scaleX(1)}
+  .cap .ic{width:44px;height:44px;border-radius:11px;display:grid;place-items:center;margin-bottom:20px;background:rgba(47,107,255,.08);border:1px solid rgba(47,107,255,.2)}
+  .cap .ic svg{width:22px;height:22px;stroke:var(--teal);fill:none;stroke-width:1.7}
+  .cap h3{font-size:20px;margin-bottom:9px}
+  .cap p{color:var(--text-dim);font-size:15px}
+  .cap .tag{font-family:"IBM Plex Mono";font-size:11px;color:var(--muted);position:absolute;top:26px;right:26px}
+  .cap.span2{grid-column:span 2}
+
+  /* ---------- servicenow ---------- */
+  .sn-split{display:grid;grid-template-columns:.92fr 1.08fr;gap:48px;align-items:center}
+  .sn-copy h3{font-size:21px;margin-bottom:10px}
+  .sn-copy .lede{color:var(--text-dim);font-size:16px;max-width:44ch}
+  .sn-check{list-style:none;margin:22px 0 28px;display:grid;gap:13px}
+  .sn-check li{position:relative;padding-left:30px;color:var(--text-dim);font-size:15px}
+  .sn-check li::before{content:"✓";position:absolute;left:0;top:1px;width:18px;height:18px;display:grid;place-items:center;border-radius:6px;background:linear-gradient(135deg,var(--teal),var(--teal-deep));color:#fff;font-size:11px;font-weight:700}
+  .sn-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+
+  /* ---------- approach ---------- */
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 1px 2px rgba(13,21,38,.04),0 18px 40px -28px rgba(13,21,38,.28)}
+  .step{padding:34px 26px;border-right:1px solid var(--line);position:relative;background:#fff}
+  .step:last-child{border-right:none}
+  .step .num{font-family:"Space Grotesk";font-weight:700;font-size:15px;color:var(--teal);letter-spacing:.05em}
+  .step h3{font-size:19px;margin:16px 0 10px}
+  .step p{color:var(--text-dim);font-size:14.5px}
+  .step .rail{position:absolute;left:0;top:0;bottom:0;width:2px;background:linear-gradient(var(--teal),transparent);opacity:0;transition:opacity .3s}
+  .step:hover .rail{opacity:1}
+
+  /* ---------- outcomes ---------- */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+  .stat{border-left:2px solid var(--line);padding-left:20px}
+  .stat .big{font-family:"Space Grotesk";font-weight:700;font-size:clamp(34px,4vw,46px);letter-spacing:-.03em;line-height:1;background:linear-gradient(120deg,var(--text),var(--teal));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .stat .cap-t{margin-top:12px;color:var(--text-dim);font-size:14.5px}
+  .stat small{display:block;color:var(--muted);font-family:"IBM Plex Mono";font-size:11px;margin-top:8px}
+
+  /* ---------- industries ---------- */
+  .ind-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .ind{
+    border:1px solid var(--line);border-radius:16px;padding:26px 24px;background:var(--panel);
+    position:relative;overflow:hidden;display:flex;flex-direction:column;
+    transition:transform .3s var(--ease),border-color .3s,box-shadow .3s;
+    box-shadow:0 1px 2px rgba(13,21,38,.04),0 12px 28px -22px rgba(13,21,38,.22);
+  }
+  .ind::after{content:"";position:absolute;left:0;top:0;bottom:0;width:2px;background:linear-gradient(var(--teal),var(--teal-deep));transform:scaleY(0);transform-origin:top;transition:transform .4s var(--ease)}
+  .ind:hover{border-color:rgba(47,107,255,.3);box-shadow:0 1px 2px rgba(13,21,38,.05),0 22px 40px -26px rgba(13,21,38,.34);transform:translateY(-4px)}
+  .ind:hover::after{transform:scaleY(1)}
+  .ind-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
+  .ind .ic{width:42px;height:42px;border-radius:11px;display:grid;place-items:center;background:rgba(47,107,255,.08);border:1px solid rgba(47,107,255,.2)}
+  .ind .ic svg{width:21px;height:21px;stroke:var(--teal);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+  .ind .n{font-family:"IBM Plex Mono";font-size:11px;color:var(--muted)}
+  .ind h3{font-size:18px;margin:0 0 8px}
+  .ind p{font-size:14px;color:var(--text-dim);flex:1}
+  .ind .metric{margin:16px 0 14px;display:flex;align-items:baseline;gap:8px}
+  .ind .metric b{font-family:"Space Grotesk";font-weight:700;font-size:24px;letter-spacing:-.02em;color:var(--teal)}
+  .ind .metric span{font-size:12.5px;color:var(--text-dim)}
+  .ind .tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:auto;padding-top:6px}
+  .ind .tags span{font-family:"IBM Plex Mono";font-size:11px;color:var(--muted);border:1px solid var(--line);border-radius:20px;padding:4px 11px}
+
+  /* ---------- careers ---------- */
+  .careers-filter{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+  .fbtn{font-family:"IBM Plex Mono";font-size:13px;color:var(--text-dim);border:1px solid var(--line);background:#fff;border-radius:20px;padding:7px 16px;cursor:pointer;transition:.2s;line-height:1}
+  .fbtn:hover{border-color:var(--teal);color:var(--teal)}
+  .fbtn.active{background:linear-gradient(135deg,#2F6BFF,#06B6D4);border-color:transparent;color:#fff}
+  .job-count{color:var(--muted);font-size:12px;margin-bottom:26px;font-family:"IBM Plex Mono"}
+  .job-list{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .job{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:16px;padding:24px;background:var(--panel);text-decoration:none;transition:transform .3s var(--ease),border-color .3s,box-shadow .3s;box-shadow:0 1px 2px rgba(13,21,38,.04),0 12px 28px -22px rgba(13,21,38,.22)}
+  .job:hover{transform:translateY(-3px);border-color:rgba(47,107,255,.3);box-shadow:0 22px 40px -26px rgba(13,21,38,.34)}
+  .job-dept{font-family:"IBM Plex Mono";font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--teal)}
+  .job h3{font-size:18px;margin:9px 0 7px}
+  .job>p{font-size:13.5px;color:var(--text-dim)}
+  .job-foot{display:flex;align-items:center;gap:12px;margin-top:16px;padding-top:14px;border-top:1px solid var(--line-soft)}
+  .job-loc{font-size:13px;color:var(--text);font-weight:500;margin-right:auto}
+  .job-type{font-family:"IBM Plex Mono";font-size:11px;color:var(--muted)}
+  .job-apply{font-size:13px;color:var(--teal);font-weight:600}
+  .job:hover .job-apply{text-decoration:underline}
+  .job.hide{display:none}
+
+  /* ---------- cta band ---------- */
+  .cta-band{padding:0}
+  .cta-inner{
+    margin:0 auto;max-width:var(--maxw);
+    background:linear-gradient(135deg,#2F6BFF,#0BA5C6);
+    border:1px solid rgba(255,255,255,.16);border-radius:24px;
+    box-shadow:0 30px 60px -30px rgba(47,107,255,.6);
+    padding:56px 48px;position:relative;overflow:hidden;
+    display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;
+  }
+  .cta-inner::before{content:"";position:absolute;right:-60px;top:-60px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.22),transparent 70%)}
+  .cta-inner h2{font-size:clamp(26px,3.4vw,38px);max-width:16ch;position:relative;color:#fff}
+  .cta-inner p{color:rgba(255,255,255,.88);margin-top:10px;position:relative}
+  .cta-inner .btn-primary{background:#fff;color:#1D4ED8;box-shadow:0 10px 26px -10px rgba(0,0,0,.35)}
+  .cta-inner .btn-primary:hover{box-shadow:0 16px 32px -10px rgba(0,0,0,.4)}
+
+  /* ---------- contact ---------- */
+  .contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:52px;align-items:start}
+  .contact-info h2{font-size:clamp(28px,3.6vw,40px);margin:16px 0 16px}
+  .contact-info p{color:var(--text-dim);font-size:16px;margin-bottom:28px}
+  .info-row{display:flex;gap:14px;align-items:flex-start;margin-bottom:18px}
+  .info-row .k{font-family:"IBM Plex Mono";font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);width:64px;flex:none;padding-top:3px}
+  .info-row .v{color:var(--text-dim);font-size:15px}
+  .info-row .v a:hover{color:var(--teal)}
+  form{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:30px;box-shadow:0 1px 2px rgba(13,21,38,.04),0 20px 44px -28px rgba(13,21,38,.3)}
+  .field{margin-bottom:18px}
+  .field label{display:block;font-size:13px;color:var(--text-dim);margin-bottom:7px;font-weight:500}
+  .field input,.field select,.field textarea{
+    width:100%;background:var(--panel-2);border:1px solid var(--line);border-radius:10px;
+    padding:12px 14px;color:var(--text);font-family:"IBM Plex Sans";font-size:15px;transition:border-color .2s,box-shadow .2s;
+  }
+  .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--teal);box-shadow:0 0 0 3px rgba(47,107,255,.14)}
+  .field textarea{resize:vertical;min-height:96px}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  form .btn-primary{width:100%;justify-content:center;margin-top:6px}
+  .formnote{font-size:12px;color:var(--muted);margin-top:12px;text-align:center;font-family:"IBM Plex Mono"}
+  .toast{display:none;margin-top:14px;padding:12px 14px;border-radius:10px;background:rgba(47,107,255,.08);border:1px solid rgba(47,107,255,.3);color:#1D4ED8;font-size:14px}
+  .toast.show{display:block}
+
+  /* ---------- footer ---------- */
+  footer{border-top:1px solid var(--line-soft);padding:52px 0 34px;background:var(--panel-2)}
+  .foot-top{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:32px;margin-bottom:40px}
+  .foot-col h4{font-family:"IBM Plex Mono";font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:16px}
+  .foot-col a{display:block;color:var(--text-dim);font-size:14.5px;margin-bottom:10px;transition:color .2s}
+  .foot-col a:hover{color:var(--teal)}
+  .foot-brand p{color:var(--text-dim);font-size:14.5px;max-width:34ch;margin-top:14px}
+  .foot-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;padding-top:24px;border-top:1px solid var(--line-soft);color:var(--muted);font-size:13px;font-family:"IBM Plex Mono"}
+
+  /* ---------- responsive ---------- */
+  @media(max-width:900px){
+    .nav-links{
+      position:absolute;top:70px;left:0;right:0;flex-direction:column;gap:0;
+      background:var(--bg-1);border-bottom:1px solid var(--line);
+      max-height:0;overflow:hidden;transition:max-height .35s var(--ease);
+    }
+    .nav-links.open{max-height:480px}
+    .nav-links a{padding:16px 28px;width:100%;border-top:1px solid var(--line-soft)}
+    .nav-links .btn{margin:16px 28px;width:calc(100% - 56px);justify-content:center}
+    .menu-toggle{display:block}
+    .hero .wrap{grid-template-columns:1fr;gap:44px}
+    .flowbox{max-width:460px;margin:0 auto}
+    .cap-grid{grid-template-columns:repeat(2,1fr)}
+    .cap.span2{grid-column:span 2}
+    .sn-split{grid-template-columns:1fr;gap:36px}
+    .steps{grid-template-columns:1fr 1fr}
+    .step:nth-child(2){border-right:none}
+    .step:nth-child(1),.step:nth-child(2){border-bottom:1px solid var(--line-soft)}
+    .stats{grid-template-columns:1fr 1fr;gap:28px}
+    .ind-grid{grid-template-columns:repeat(2,1fr)}
+    .contact-grid{grid-template-columns:1fr;gap:36px}
+    .foot-top{grid-template-columns:1fr 1fr}
+  }
+  @media(max-width:680px){
+    .cap-grid{grid-template-columns:1fr}
+    .cap.span2{grid-column:span 1}
+    .sn-grid{grid-template-columns:1fr}
+    .job-list{grid-template-columns:1fr}
+    .stats{grid-template-columns:1fr;gap:22px}
+    .ind-grid{grid-template-columns:1fr}
+    .two{grid-template-columns:1fr}
+    .cta-inner{padding:38px 26px}
+    .band{padding:72px 0}
+  }
+
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+    .packet{display:none}
+    .flow-line.active{stroke-dasharray:none}
+    body.js .reveal{opacity:1;transform:none}
+  }
+</style>
+</head>
+<body>
+
+<header id="top">
+  <div class="wrap">
+    <nav>
+      <a class="brand" href="#top" aria-label="DDisrupt Software home"><svg class="brand-logo" viewBox="12 24 360 100" fill="none" role="img" aria-label="DDisrupt Software"><defs><linearGradient id="ddl-a" x1="22" y1="34" x2="98" y2="94" gradientUnits="userSpaceOnUse"><stop stop-color="#3B82F6"/><stop offset="1" stop-color="#06B6D4"/></linearGradient></defs><g transform="translate(0,5)"><path d="M40 88 a21 21 0 0 1 -2 -41 a28 28 0 0 1 54 -4 a18 18 0 0 1 4 45 Z" fill="url(#ddl-a)"/><g stroke="#fff" stroke-width="3.4" opacity=".9"><line x1="63" y1="63" x2="46" y2="52"/><line x1="63" y1="63" x2="82" y2="53"/><line x1="63" y1="63" x2="54" y2="80"/></g><g fill="#fff"><circle cx="46" cy="52" r="5"/><circle cx="82" cy="53" r="5"/><circle cx="54" cy="80" r="5"/><circle cx="63" cy="63" r="8"/></g></g><text x="140" y="68" font-family="'Space Grotesk',sans-serif" font-weight="700" font-size="46" letter-spacing="-1.3" fill="#0D1526"><tspan fill="#2F6BFF">D</tspan>Disrupt</text><text x="142" y="100" font-family="'JetBrains Mono',monospace" font-weight="500" font-size="15" letter-spacing="7.5" fill="#8A93A6">SOFTWARE</text></svg></a>
+      <div class="nav-links" id="navlinks">
+        <a href="#capabilities">Capabilities</a>
+        <a href="#servicenow">ServiceNow</a>
+        <a href="#approach">Approach</a>
+        <a href="#outcomes">Outcomes</a>
+        <a href="#industries">Industries</a>
+        <a href="#careers">Careers</a>
+        <a class="btn btn-primary" href="#contact">Book a consultation</a>
+      </div>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-copy">
+      <span class="eyebrow reveal">Hyperautomation · Integration · Supply Chain</span>
+      <h1 class="reveal d1">Orchestrate every <span class="flowword">flow</span> across your enterprise.</h1>
+      <p class="lede reveal d2">DDisrupt designs, builds, and runs the automation and integration layer that connects your cloud, your APIs, and your supply chain — so work moves without friction.</p>
+      <div class="hero-cta reveal d3">
+        <a class="btn btn-primary" href="#contact">Book a consultation →</a>
+        <a class="btn btn-ghost" href="#capabilities">See what we build</a>
+      </div>
+      <div class="trust reveal d3">
+        <span><b>Google Cloud</b> partner delivery</span>
+        <span><b>Apigee</b> · <b>Appian</b> certified teams</span>
+      </div>
+    </div>
+
+    <div class="flowbox reveal d2">
+      <svg class="flow-svg" viewBox="0 0 620 480" role="img" aria-label="Diagram of DDisrupt's orchestration engine connecting Apigee, Google Cloud, Appian, automation, ERP systems, and the supply chain.">
+        <defs>
+          <linearGradient id="tealgrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#2F6BFF"/><stop offset="1" stop-color="#06B6D4"/>
+          </linearGradient>
+        </defs>
+
+        <!-- connectors -->
+        <path class="flow-line active" d="M310,240 Q200,150 120,110"/>
+        <path class="flow-line active" d="M310,240 Q410,150 500,110"/>
+        <path class="flow-line active" d="M310,240 Q410,320 500,370"/>
+        <path class="flow-line active" d="M310,240 Q200,320 120,370"/>
+        <path class="flow-line active" d="M310,240 Q300,150 310,70"/>
+        <path class="flow-line active" d="M310,240 Q320,330 310,410"/>
+
+        <!-- packets -->
+        <circle class="packet p1" r="3.5"/>
+        <circle class="packet p2" r="3.5"/>
+        <circle class="packet p3" r="3.5"/>
+        <circle class="packet p4" r="3.5"/>
+
+        <!-- hub -->
+        <circle class="node-ring" cx="310" cy="240" r="30"/>
+        <circle class="node-dot hub" cx="310" cy="240" r="30"/>
+        <text class="node-label hub" x="310" y="236" text-anchor="middle">DDisrupt</text>
+        <text class="node-sub" x="310" y="250" text-anchor="middle">orchestration</text>
+
+        <!-- satellite nodes -->
+        <g>
+          <circle class="node-dot" cx="120" cy="110" r="8"/>
+          <text class="node-label" x="120" y="88" text-anchor="middle">Apigee</text>
+          <text class="node-sub" x="120" y="132" text-anchor="middle">API gateway</text>
+        </g>
+        <g>
+          <circle class="node-dot" cx="500" cy="110" r="8"/>
+          <text class="node-label" x="500" y="88" text-anchor="middle">Appian</text>
+          <text class="node-sub" x="500" y="132" text-anchor="middle">low-code apps</text>
+        </g>
+        <g>
+          <circle class="node-dot" cx="500" cy="370" r="8"/>
+          <text class="node-label" x="500" y="348" text-anchor="middle">Supply chain</text>
+          <text class="node-sub" x="500" y="392" text-anchor="middle">plan · fulfil</text>
+        </g>
+        <g>
+          <circle class="node-dot" cx="120" cy="370" r="8"/>
+          <text class="node-label" x="120" y="348" text-anchor="middle">Google Cloud</text>
+          <text class="node-sub" x="120" y="392" text-anchor="middle">data substrate</text>
+        </g>
+        <g>
+          <circle class="node-dot" cx="310" cy="70" r="8"/>
+          <text class="node-label" x="310" y="48" text-anchor="middle">RPA · AI</text>
+        </g>
+        <g>
+          <circle class="node-dot" cx="310" cy="410" r="8"/>
+          <text class="node-label" x="310" y="438" text-anchor="middle">ERP systems</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- STACK STRIP -->
+<div class="stack-strip">
+  <div class="wrap">
+    <span class="lbl">Platforms we build on</span>
+    <div class="chips">
+      <span class="chip">Google Cloud</span>
+      <span class="chip">Apigee</span>
+      <span class="chip">Appian</span>
+      <span class="chip">UiPath</span>
+      <span class="chip">Automation Anywhere</span>
+      <span class="chip">BigQuery</span>
+      <span class="chip">Kubernetes (GKE)</span>
+    </div>
+  </div>
+</div>
+
+<!-- CAPABILITIES -->
+<section class="band" id="capabilities">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">What we build</span>
+      <h2>Five capabilities, one connected operating layer.</h2>
+      <p>We don't sell tools in isolation. Each capability plugs into the same orchestration layer, so automation, integration, and supply chain work as one system.</p>
+    </div>
+    <div class="cap-grid">
+      <div class="cap span2 reveal">
+        <span class="tag">01</span>
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l3 3M16 16l3 3M19 5l-3 3M8 16l-3 3"/><circle cx="12" cy="12" r="3.2"/></svg></div>
+        <h3>Hyperautomation</h3>
+        <p>Combine RPA, process mining, and AI to automate work end to end — not one task at a time. We find the bottlenecks, remove the manual handoffs, and put a human back in the loop only where judgement is needed.</p>
+      </div>
+      <div class="cap reveal d1">
+        <span class="tag">02</span>
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10"/><circle cx="18" cy="17" r="2.4"/></svg></div>
+        <h3>API management · Apigee</h3>
+        <p>Design, secure, and scale the APIs that connect your systems and partners, with governance and analytics built in on Apigee.</p>
+      </div>
+      <div class="cap reveal">
+        <span class="tag">03</span>
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M6 16a4 4 0 010-8 5 5 0 019.6-1.4A3.5 3.5 0 0118 16H6z"/></svg></div>
+        <h3>Google Cloud (GCP)</h3>
+        <p>Build and modernise on GCP — secure landing zones, cloud-native apps, and data platforms on BigQuery and GKE.</p>
+      </div>
+      <div class="cap reveal d1">
+        <span class="tag">04</span>
+        <div class="ic"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><path d="M13.5 16.5h6M16.5 13.5v6"/></svg></div>
+        <h3>Appian low-code</h3>
+        <p>Ship enterprise process apps in weeks, not quarters — case management, approvals, and workflows delivered on Appian.</p>
+      </div>
+      <div class="cap span2 reveal d2">
+        <span class="tag">05</span>
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M3 7h11v8H3zM14 10h4l3 3v2h-7z"/><circle cx="7" cy="18" r="1.8"/><circle cx="17.5" cy="18" r="1.8"/></svg></div>
+        <h3>Supply chain consulting</h3>
+        <p>Digitise planning, visibility, and fulfilment across your supply network. We connect ERP, logistics, and supplier data into a single control tower — then automate the exceptions that used to eat your team's week.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICENOW -->
+<section class="band" id="servicenow">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">ServiceNow</span>
+      <h2>Run the enterprise on a single system of action.</h2>
+      <p>We advise on, implement, and optimise ServiceNow — turning disconnected requests, incidents, and operations into one automated platform your whole business can run on.</p>
+    </div>
+    <div class="sn-split">
+      <div class="sn-copy reveal">
+        <h3>From advisory to a platform that runs itself.</h3>
+        <p class="lede">First-time rollout or a stalled instance to rescue — our certified team brings a bias for automation and clean, upgrade-safe delivery.</p>
+        <ul class="sn-check">
+          <li>Platform strategy, licensing &amp; roadmap</li>
+          <li>Implementation, configuration &amp; data migration</li>
+          <li>Integration with ERP, cloud &amp; legacy systems</li>
+          <li>Managed support, upgrades &amp; optimisation</li>
+        </ul>
+        <a class="btn btn-primary" href="#contact">Talk ServiceNow →</a>
+      </div>
+      <div class="sn-grid">
+        <div class="ind reveal">
+          <div class="ind-top">
+            <div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="3.4"/><path d="M5.5 5.5l4 4M18.5 5.5l-4 4M5.5 18.5l4-4M18.5 18.5l-4-4"/></svg></div>
+            <span class="n">/01</span>
+          </div>
+          <h3>ITSM</h3>
+          <p>Incident, problem, change, and request management on one modern service desk.</p>
+        </div>
+        <div class="ind reveal d1">
+          <div class="ind-top">
+            <div class="ic"><svg viewBox="0 0 24 24"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="2.6"/></svg></div>
+            <span class="n">/02</span>
+          </div>
+          <h3>ITOM</h3>
+          <p>Discovery, service mapping, and event management for end-to-end operational visibility.</p>
+        </div>
+        <div class="ind reveal d1">
+          <div class="ind-top">
+            <div class="ic"><svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="2"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="12" r="2"/><path d="M8 6h4a4 4 0 014 4v0M8 18h4a4 4 0 004-4v0"/></svg></div>
+            <span class="n">/03</span>
+          </div>
+          <h3>Workflow &amp; App Engine</h3>
+          <p>Low-code apps and automated workflows that take ServiceNow well beyond IT.</p>
+        </div>
+        <div class="ind reveal d2">
+          <div class="ind-top">
+            <div class="ic"><svg viewBox="0 0 24 24"><path d="M10 13a3.5 3.5 0 005 0l3-3a3.5 3.5 0 00-5-5l-1 1"/><path d="M14 11a3.5 3.5 0 00-5 0l-3 3a3.5 3.5 0 005 5l1-1"/></svg></div>
+            <span class="n">/04</span>
+          </div>
+          <h3>Integration Hub</h3>
+          <p>Connect ServiceNow to ERP, cloud, and legacy systems with spokes and governed APIs.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APPROACH -->
+<section class="band alt" id="approach">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">How we work</span>
+      <h2>A delivery model built to ship, then scale.</h2>
+      <p>Every engagement moves through the same four stages. Short increments, measurable outcomes, no year-long roadmaps to nowhere.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><span class="rail"></span><span class="num">01</span><h3>Assess</h3><p>We map your processes, systems, and bottlenecks — and agree on the outcomes that matter.</p></div>
+      <div class="step reveal d1"><span class="rail"></span><span class="num">02</span><h3>Architect</h3><p>We design the integration and automation blueprint your teams can build on and trust.</p></div>
+      <div class="step reveal d2"><span class="rail"></span><span class="num">03</span><h3>Build</h3><p>We deliver in short, shippable increments — value in production within weeks.</p></div>
+      <div class="step reveal d3"><span class="rail"></span><span class="num">04</span><h3>Scale</h3><p>We operate, measure, and expand the platform across the wider enterprise.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- OUTCOMES -->
+<section class="band" id="outcomes">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Outcomes we target</span>
+      <h2>What connected automation is worth.</h2>
+      <p>Representative results from hyperautomation and integration programmes — the range depends on your starting point, which is exactly what the assessment defines.</p>
+    </div>
+    <div class="stats">
+      <div class="stat reveal"><div class="big">60%</div><div class="cap-t">faster process cycle times</div><small>fewer manual handoffs</small></div>
+      <div class="stat reveal d1"><div class="big">4×</div><div class="cap-t">faster integration delivery</div><small>reusable API patterns</small></div>
+      <div class="stat reveal d2"><div class="big">40%</div><div class="cap-t">lower operational cost</div><small>automated exceptions</small></div>
+      <div class="stat reveal d3"><div class="big">99.9%</div><div class="cap-t">API availability</div><small>governed on Apigee</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- INDUSTRIES -->
+<section class="band alt" id="industries">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Where we work</span>
+      <h2>Built for operations that can't afford to stall.</h2>
+      <p>Different sectors, one problem: work stuck between systems. Here's where our automation and integration layer earns its keep.</p>
+    </div>
+    <div class="ind-grid">
+      <div class="ind reveal">
+        <div class="ind-top">
+          <div class="ic"><svg viewBox="0 0 24 24"><path d="M3 21V9l6 3V9l6 3V6l6 3v12H3z"/><path d="M7 21v-4M13 21v-4M19 21v-4"/></svg></div>
+          <span class="n">/01</span>
+        </div>
+        <h3>Manufacturing</h3>
+        <p>Connect shop-floor systems to ERP and automate production planning, so demand and capacity stay in sync.</p>
+        <div class="metric"><b>60%</b><span>less manual planning effort</span></div>
+        <div class="tags"><span>MES → ERP</span><span>Planning</span><span>OEE</span></div>
+      </div>
+      <div class="ind reveal d1">
+        <div class="ind-top">
+          <div class="ic"><svg viewBox="0 0 24 24"><path d="M5 8h14l-1 12H6L5 8z"/><path d="M9 8a3 3 0 016 0"/></svg></div>
+          <span class="n">/02</span>
+        </div>
+        <h3>Retail & CPG</h3>
+        <p>Sense demand, orchestrate orders, and coordinate suppliers across channels from a single source of truth.</p>
+        <div class="metric"><b>2×</b><span>faster order-to-fulfil cycle</span></div>
+        <div class="tags"><span>Demand sensing</span><span>Order flow</span><span>Omnichannel</span></div>
+      </div>
+      <div class="ind reveal d2">
+        <div class="ind-top">
+          <div class="ic"><svg viewBox="0 0 24 24"><path d="M2 7h11v8H2zM13 10h4l4 3v2h-8z"/><circle cx="6" cy="18" r="1.8"/><circle cx="17" cy="18" r="1.8"/></svg></div>
+          <span class="n">/03</span>
+        </div>
+        <h3>Logistics</h3>
+        <p>Real-time visibility across the network with exception-driven fulfilment that flags problems before customers do.</p>
+        <div class="metric"><b>99.9%</b><span>shipment tracking coverage</span></div>
+        <div class="tags"><span>Control tower</span><span>Track & trace</span><span>Exceptions</span></div>
+      </div>
+      <div class="ind reveal">
+        <div class="ind-top">
+          <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-7-10a7 7 0 0114 0c0 5.5-7 10-7 10z"/><path d="M9 11h2V9h2v2h2M12 9v6"/></svg></div>
+          <span class="n">/04</span>
+        </div>
+        <h3>Healthcare</h3>
+        <p>Compliant, auditable workflows and secure integration between clinical, administrative, and partner systems.</p>
+        <div class="metric"><b>40%</b><span>faster case processing</span></div>
+        <div class="tags"><span>HL7 / FHIR</span><span>Compliance</span><span>Case mgmt</span></div>
+      </div>
+      <div class="ind reveal d1">
+        <div class="ind-top">
+          <div class="ic"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V10M12 21V10M19 21V10M3 10l9-6 9 6"/></svg></div>
+          <span class="n">/05</span>
+        </div>
+        <h3>Financial services</h3>
+        <p>Automate onboarding and case work, and govern the APIs that connect core systems, partners, and regulators.</p>
+        <div class="metric"><b>4×</b><span>faster integration delivery</span></div>
+        <div class="tags"><span>KYC / onboarding</span><span>API governance</span><span>Audit</span></div>
+      </div>
+      <div class="ind reveal d2">
+        <div class="ind-top">
+          <div class="ic"><svg viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/></svg></div>
+          <span class="n">/06</span>
+        </div>
+        <h3>Energy & Utilities</h3>
+        <p>Unify field, asset, and grid data to automate maintenance and keep critical infrastructure running.</p>
+        <div class="metric"><b>30%</b><span>less unplanned downtime</span></div>
+        <div class="tags"><span>Asset data</span><span>Field ops</span><span>Predictive</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CAREERS -->
+<section class="band" id="careers">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Careers</span>
+      <h2>Build the automation layer of the enterprise.</h2>
+      <p>We're hiring across India, the UAE, and the US — consultants, developers, and engineers who like hard integration problems and shipping real outcomes. Filter by location to find your fit.</p>
+    </div>
+
+    <div class="careers-filter reveal" id="careersFilter">
+      <button class="fbtn active" data-filter="all">All locations</button>
+      <button class="fbtn" data-filter="bangalore">Bangalore</button>
+      <button class="fbtn" data-filter="pune">Pune</button>
+      <button class="fbtn" data-filter="noida">Noida</button>
+      <button class="fbtn" data-filter="mumbai">Mumbai</button>
+      <button class="fbtn" data-filter="hyderabad">Hyderabad</button>
+      <button class="fbtn" data-filter="chennai">Chennai</button>
+      <button class="fbtn" data-filter="uae">UAE</button>
+      <button class="fbtn" data-filter="us">US</button>
+    </div>
+    <p class="job-count" id="jobCount"></p>
+
+    <div class="job-list" id="jobList">
+      <a class="job" data-loc="bangalore pune" href="mailto:careers@ddisrupt.com?subject=Application:%20Apigee%20Consultant">
+        <span class="job-dept">Integration</span><h3>Apigee Consultant</h3>
+        <p>Design and deliver API programs on Apigee — security, governance, and scale.</p>
+        <div class="job-foot"><span class="job-loc">Bangalore · Pune</span><span class="job-type">Full-time</span><span class="job-apply">Apply →</span></div>
+      </a>
+      <a class="job" data-loc="uae us" href="mailto:careers@ddisrupt.com?subject=Application:%20Apigee%20Architect">
+        <span class="job-dept">Integration</span><h3>Apigee Architect</h3>
+        <p>Own API platform architecture and standards for enterprise clients.</p>
+        <div class="job-foot"><span class="job-loc">UAE · US</span><span class="job-type">Full-time</span><span class="job-apply">Apply →</span></div>
+      </a>
+      <a class="job" data-loc="hyderabad noida" href="mailto:careers@ddisrupt.com?subject=Application:%20Appian%20Consultant">
+        <span class="job-dept">Low-code</span><h3>Appian Consultant</h3>
+        <p>Build enterprise process apps on Appian — case management and workflows.</p>
+        <div class="job-foot"><span class="job-loc">Hyderabad · Noida</span><span class="job-type">Full-time</span><span class="job-apply">Apply →</span></div>
+      </a>
+      <a class="job" data-loc="chennai pune" href="mailto:careers@ddisrupt.com?subject=Application:%20Appian%20Developer">
+        <span class="job-dept">Low-code</span><h3>Appian Developer</h3>
+        <p>Develop and configure Appian applications, records, and integrations.</p>
+        <div class="job-foot"><span class="job-loc">Chennai · Pune</span><span class="job-type">Full-time</span><span class="job-apply">Apply →</span></div>
+      </a>
+      <a class="job" data-loc="pune chennai" href="mailto:careers@ddisrupt.com?subject=Application:%20RPA%20Developer">
+        <span class="job-dept">Automation</span><h3>RPA Developer</h3>
+        <p>Automate processes end to end with UiPath and Automation Anywhere.</p>
+        <div class="job-foot"><span class="job-loc">Pune · Chennai</span><span class="job-type">Full-time</span><span class="job-apply">Apply →</span></div>
+      </a>
+      <a class="job" data-loc="mumbai bangalore" href="mailto:careers@ddisrupt.com?subject=Application:%20Automation%20Anywhere%20Developer">
+        <span class="job-dept">Automation</span><h3>Automation Anywhere Developer</h3>
+        <p>Design, build, and support bots on Automation Anywhere 360.</p>
+        <div class="job-foot"><span class="job-loc">Mumbai · Bangalore</span><span class="job-type">Full-time</span><span class="job-apply">Apply →</span></div>
+      </a>
+      <a class="job" data-loc="bangalore hyderabad" href="mailto:careers@ddisrupt.com?subject=Application:%20GCP%20Cloud%20Engineer">
+        <span class="job-dept">Cloud</span><h3>GCP Cloud Engineer</h3>
+        <p>Build and modernise on Google Cloud — GKE, landing zones, and IaC.</p>
+        <div class="job-foot"><span class="job-loc">Bangalore · Hyderabad</span><span class="job-type">Full-time</span><span class="job-apply">Apply →</span></div>
+      </a>
+      <a class="job" data-loc="noida uae" href="mailto:careers@ddisrupt.com?subject=Application:%20GCP%20DevOps%20Engineer">
+        <span class="job-dept">Cloud</span><h3>GCP DevOps Engineer</h3>
+        <p>CI/CD, Terraform, and reliability engineering across GCP workloads.</p>
+        <div class="job-foot"><span class="job-loc">Noida · UAE</span><span class="job-type">Full-time</span><span class="job-apply">Apply →</span></div>
+      </a>
+      <a class="job" data-loc="bangalore mumbai" href="mailto:careers@ddisrupt.com?subject=Application:%20Data%20Engineer">
+        <span class="job-dept">Data</span><h3>Data Engineer</h3>
+        <p>Build data pipelines and platforms on BigQuery and Dataflow.</p>
+        <div class="job-foot"><span class="job-loc">Bangalore · Mumbai</span><span class="job-type">Full-time</span><span class="job-apply">Apply →</span></div>
+      </a>
+      <a class="job" data-loc="hyderabad us" href="mailto:careers@ddisrupt.com?subject=Application:%20Senior%20Data%20Engineer">
+        <span class="job-dept">Data</span><h3>Senior Data Engineer</h3>
+        <p>Lead data architecture and streaming pipelines for enterprise clients.</p>
+        <div class="job-foot"><span class="job-loc">Hyderabad · US</span><span class="job-type">Full-time</span><span class="job-apply">Apply →</span></div>
+      </a>
+      <a class="job" data-loc="bangalore uae" href="mailto:careers@ddisrupt.com?subject=Application:%20Gen%20AI%20Consultant">
+        <span class="job-dept">AI</span><h3>Gen AI Consultant</h3>
+        <p>Design LLM and Gen AI solutions — RAG, agents, and intelligent automation.</p>
+        <div class="job-foot"><span class="job-loc">Bangalore · UAE</span><span class="job-type">Full-time</span><span class="job-apply">Apply →</span></div>
+      </a>
+      <a class="job" data-loc="chennai us" href="mailto:careers@ddisrupt.com?subject=Application:%20Gen%20AI%20/%20ML%20Engineer">
+        <span class="job-dept">AI</span><h3>Gen AI / ML Engineer</h3>
+        <p>Build and deploy ML and LLM systems into production at scale.</p>
+        <div class="job-foot"><span class="job-loc">Chennai · US</span><span class="job-type">Full-time</span><span class="job-apply">Apply →</span></div>
+      </a>
+      <a class="job" data-loc="noida mumbai" href="mailto:careers@ddisrupt.com?subject=Application:%20ServiceNow%20Consultant">
+        <span class="job-dept">ServiceNow</span><h3>ServiceNow Consultant</h3>
+        <p>Implement ServiceNow across ITSM, ITOM, and enterprise workflow.</p>
+        <div class="job-foot"><span class="job-loc">Noida · Mumbai</span><span class="job-type">Full-time</span><span class="job-apply">Apply →</span></div>
+      </a>
+      <a class="job" data-loc="mumbai uae" href="mailto:careers@ddisrupt.com?subject=Application:%20Supply%20Chain%20Consultant">
+        <span class="job-dept">Supply Chain</span><h3>Supply Chain Consultant</h3>
+        <p>Digitise planning, visibility, and fulfilment across supply networks.</p>
+        <div class="job-foot"><span class="job-loc">Mumbai · UAE</span><span class="job-type">Full-time</span><span class="job-apply">Apply →</span></div>
+      </a>
+    </div>
+
+    <p class="job-count" style="margin-top:26px;margin-bottom:0"><strong style="color:var(--text)">Onsite project locations</strong> — Dubai, UAE · Dallas, Texas, USA · New Jersey, USA.</p>
+    <p class="job-count" style="margin-top:10px;margin-bottom:0">Don't see your role? Write to us at <a href="mailto:careers@ddisrupt.com" style="color:var(--teal)">careers@ddisrupt.com</a>.</p>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="band">
+  <div class="cta-band">
+    <div class="cta-inner reveal">
+      <div>
+        <h2>Ready to disrupt the bottlenecks?</h2>
+        <p>Book a 45-minute working session. We'll map one process and show you where the flow breaks.</p>
+      </div>
+      <a class="btn btn-primary" href="#contact">Book a consultation →</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="band alt" id="contact">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <span class="eyebrow">Get in touch</span>
+        <h2>Let's map your first flow.</h2>
+        <p>Tell us what's slowing your operation down. We'll come back within one business day with a point of view — not a sales deck.</p>
+        <div class="info-row"><span class="k">Email</span><span class="v"><a href="mailto:hello@ddisrupt.com">hello@ddisrupt.com</a></span></div>
+        <div class="info-row"><span class="k">Sales</span><span class="v"><a href="mailto:sales@ddisrupt.com">sales@ddisrupt.com</a></span></div>
+        <div class="info-row"><span class="k">Office</span><span class="v">DDisrupt Software Pvt Ltd<br>No 14, Bhattrahalli, Old Madras Road<br>K R Puram, Bangalore, Karnataka<br>India — 560049</span></div>
+        <div class="info-row"><span class="k">Hours</span><span class="v">Mon–Fri · 9:30–18:30 IST</span></div>
+      </div>
+
+      <form id="contactForm" novalidate>
+        <div class="two">
+          <div class="field"><label for="fn">Full name</label><input id="fn" type="text" placeholder="Jane Doe" required></div>
+          <div class="field"><label for="em">Work email</label><input id="em" type="email" placeholder="jane@company.com" required></div>
+        </div>
+        <div class="two">
+          <div class="field"><label for="co">Company</label><input id="co" type="text" placeholder="Company Ltd"></div>
+          <div class="field">
+            <label for="nd">What do you need?</label>
+            <select id="nd">
+              <option>Hyperautomation</option>
+              <option>API management (Apigee)</option>
+              <option>ServiceNow</option>
+              <option>Google Cloud (GCP)</option>
+              <option>Appian low-code</option>
+              <option>Supply chain consulting</option>
+              <option>Not sure yet</option>
+            </select>
+          </div>
+        </div>
+        <div class="field"><label for="ms">Tell us about the problem</label><textarea id="ms" placeholder="The bottleneck we'd most like to remove is…"></textarea></div>
+        <button type="submit" class="btn btn-primary">Send message →</button>
+        <div class="toast" id="toast">Thanks — we'll be in touch within one business day.</div>
+        <p class="formnote">Demo form — connect it to your email service, CRM, or a form endpoint to go live.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-col foot-brand">
+        <a class="brand" href="#top" aria-label="DDisrupt Software home"><svg class="brand-logo" viewBox="12 24 360 100" fill="none" role="img" aria-label="DDisrupt Software"><defs><linearGradient id="ddl-b" x1="22" y1="34" x2="98" y2="94" gradientUnits="userSpaceOnUse"><stop stop-color="#3B82F6"/><stop offset="1" stop-color="#06B6D4"/></linearGradient></defs><g transform="translate(0,5)"><path d="M40 88 a21 21 0 0 1 -2 -41 a28 28 0 0 1 54 -4 a18 18 0 0 1 4 45 Z" fill="url(#ddl-b)"/><g stroke="#fff" stroke-width="3.4" opacity=".9"><line x1="63" y1="63" x2="46" y2="52"/><line x1="63" y1="63" x2="82" y2="53"/><line x1="63" y1="63" x2="54" y2="80"/></g><g fill="#fff"><circle cx="46" cy="52" r="5"/><circle cx="82" cy="53" r="5"/><circle cx="54" cy="80" r="5"/><circle cx="63" cy="63" r="8"/></g></g><text x="140" y="68" font-family="'Space Grotesk',sans-serif" font-weight="700" font-size="46" letter-spacing="-1.3" fill="#0D1526"><tspan fill="#2F6BFF">D</tspan>Disrupt</text><text x="142" y="100" font-family="'JetBrains Mono',monospace" font-weight="500" font-size="15" letter-spacing="7.5" fill="#8A93A6">SOFTWARE</text></svg></a>
+        <p>The automation and integration layer for the connected enterprise. Hyperautomation, Apigee, Google Cloud, Appian, and supply chain, delivered as one.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Capabilities</h4>
+        <a href="#capabilities">Hyperautomation</a>
+        <a href="#capabilities">API management</a>
+        <a href="#servicenow">ServiceNow</a>
+        <a href="#capabilities">Google Cloud</a>
+        <a href="#capabilities">Appian low-code</a>
+        <a href="#capabilities">Supply chain</a>
+      </div>
+      <div class="foot-col">
+        <h4>Company</h4>
+        <a href="#approach">Approach</a>
+        <a href="#outcomes">Outcomes</a>
+        <a href="#industries">Industries</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="foot-col">
+        <h4>Connect</h4>
+        <a href="mailto:hello@ddisrupt.com">hello@ddisrupt.com</a>
+        <a href="#">LinkedIn</a>
+        <a href="#careers">Careers</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="yr"></span> DDisrupt Software Pvt Ltd. All rights reserved.</span>
+      <span>Built to move.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.body.classList.add('js');
+
+  // year
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // nav scrolled state
+  const header = document.querySelector('header');
+  addEventListener('scroll', () => header.classList.toggle('scrolled', scrollY > 8), {passive:true});
+
+  // mobile menu
+  const toggle = document.getElementById('menuToggle');
+  const links = document.getElementById('navlinks');
+  toggle.addEventListener('click', () => links.classList.toggle('open'));
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+
+  // scroll reveal
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:.12, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // careers filter
+  const fbtns = document.querySelectorAll('.fbtn');
+  const jobs = document.querySelectorAll('.job');
+  const jobCount = document.getElementById('jobCount');
+  const applyFilter = (loc) => {
+    let n = 0;
+    jobs.forEach(j => {
+      const show = loc === 'all' || j.dataset.loc.split(' ').includes(loc);
+      j.classList.toggle('hide', !show);
+      if (show) n++;
+    });
+    const label = fbtns.length ? [...fbtns].find(b => b.dataset.filter === loc)?.textContent : '';
+    jobCount.textContent = loc === 'all'
+      ? `${n} open roles across all locations`
+      : `${n} open ${n === 1 ? 'role' : 'roles'} in ${label}`;
+  };
+  fbtns.forEach(b => b.addEventListener('click', () => {
+    fbtns.forEach(x => x.classList.remove('active'));
+    b.classList.add('active');
+    applyFilter(b.dataset.filter);
+  }));
+  if (jobs.length) applyFilter('all');
+
+  // demo form
+  document.getElementById('contactForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const t = document.getElementById('toast');
+    t.classList.add('show');
+    e.target.querySelectorAll('input,textarea').forEach(f => f.value='');
+    setTimeout(() => t.classList.remove('show'), 6000);
+  });
+</script>
+</body>
+</html>
